@@ -28,7 +28,10 @@ nav {
     margin: auto;
     position: fixed;
     bottom: -40px;
-    & input {display: none;}
+
+    & input {
+        display: none;
+    }
 }
 
 .menu {
@@ -39,6 +42,7 @@ nav {
     width: 80px;
     height: 80px;
     border-radius: 100%;
+
     &::before {
         content: 'Меню';
         position: relative;
@@ -47,6 +51,7 @@ nav {
         display: flex;
         justify-content: center;
     }
+
     & span {
         display: flex;
         justify-content: center;
@@ -55,9 +60,11 @@ nav {
     }
 }
 
-label, button {
+label,
+button {
     cursor: pointer;
     border: solid 2px var(--color-light-green);
+
     &:hover {
         filter: brightness(1.2);
         border: solid 2px var(--color-green);
@@ -72,27 +79,36 @@ label, button {
 .minibar {
     position: relative;
     transform: rotate(180deg);
+
     & button {
         background-color: var(--color-light-green);
         border-radius: 100%;
         height: 40px;
         width: 40px;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
+
     & button:nth-child(1) {
         position: absolute;
         bottom: 60px;
         right: 90px;
     }
+
     & button:nth-child(2) {
         position: absolute;
         bottom: 100px;
         right: 50px;
     }
+
     & button:nth-child(3) {
         position: absolute;
         bottom: 100px;
         left: -30px;
     }
+
     & button:nth-child(4) {
         position: absolute;
         left: 10px;
@@ -100,14 +116,18 @@ label, button {
     }
 }
 
-input#minibar:checked ~ label {
+input#minibar:checked~label {
     filter: drop-shadow(0 0 40px var(--color-light-green));
     background-color: var(--color-green);
     border: solid 2px var(--color-light-green);
-    &::before{content: 'Свернуть';font-size: 10px;}
+
+    &::before {
+        content: 'Свернуть';
+        font-size: 10px;
+    }
 }
 
-input#minibar:checked ~ .minibar {
+input#minibar:checked~.minibar {
     transform: rotate(0deg) translateX(80px);
     transition: all .1s ease-in-out;
 }
